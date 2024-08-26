@@ -14,4 +14,19 @@ Antes de comenzar, asegúrate de tener Java instalado en tu sistema. Puedes inst
 sudo apt update
 sudo apt install openjdk-17-jdk
 
+```bash
+java -version
+jar --version
 
+# Configuración de ANTLR
+
+## Descargar ANTLR
+
+### Descargar el Archivo JAR de ANTLR
+
+Crea un directorio para ANTLR y descarga el archivo JAR:
+
+```bash
+mkdir -p ~/apps/ANTLR
+cd ~/apps/ANTLR
+wget https://www.antlr.org/download/antlr-4.13.2-complete.jar
