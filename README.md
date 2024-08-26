@@ -13,10 +13,12 @@ Antes de comenzar, asegúrate de tener Java instalado en tu sistema. Puedes inst
 ```bash
 sudo apt update
 sudo apt install openjdk-17-jdk
+```
 
 ```bash
 java -version
 jar --version
+```
 
 # Configuración de ANTLR
 
