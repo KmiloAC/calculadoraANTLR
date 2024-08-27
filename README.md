@@ -83,13 +83,13 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
 ### 3. Operaciones Combinadas
 
     Operación mixta con varios operadores: 5 + 3 * 2 - 12 = -1 (comprueba el orden de operaciones)
-    Operaciones con paréntesis: (5 + (3 / 3)) * 2 = 10 (comprueba el uso de paréntesis)
+    Operaciones con paréntesis: (5 + (3 / 3)) * 2 = 12 (comprueba el uso de paréntesis)
     
 
 ### 4. Casos de Errores
 
     División por cero: Verifica que la calculadora maneje este caso correctamente.
-    Entrada no numérica: Intenta realizar operaciones con entradas no numéricas, como letras o símbolos, y verifica que la calculadora las rechace correctamente.
+    Entrada no numérica: Intenta realizar operaciones con entradas no numéricas, como letras o símbolos, y verifica que       la calculadora las rechace correctamente.
 
 
 ### 5. Verificación de Estado
