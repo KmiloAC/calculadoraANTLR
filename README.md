@@ -115,7 +115,7 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
 ### 4. Casos de Errores
 
     División por cero: Verifica que la calculadora maneje este caso correctamente.
-    Entrada no numérica: Intenta realizar operaciones con entradas no numéricas, como letras o símbolos, y verifica que       la calculadora las rechace correctamente.
+    Entrada no numérica: Intenta realizar operaciones con entradas no numéricas, como letras o símbolos, y verifica que la calculadora las rechace correctamente. EN ESTE CASO NOS DIRA QUE HAY UNA LETRA DESCONOCIDA DENTRO DE NUESTRO ARCHIVO Y TENEMOS QUE MODIFICARLO
 
 ### 5. Operaciones Combinadas
 
