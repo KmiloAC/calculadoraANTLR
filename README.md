@@ -61,9 +61,26 @@ java -cp ~/apps/ANTLR/antlr-4.13.2-complete.jar org.antlr.v4.Tool
 
 # Implementación de la calculadora en ANTLR
 
-Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuestra calculadora haciendo testeos de Suma, Resta, Multiplicación y División. Estos casos de prueba nos permitirán asegurarnos de que la calculadora funciona correctamente bajo diferentes condiciones y con una variedad de datos de entrada. Nos vamos a enfocar en algunos de los siguientes ejemplos.
+### 0. Como ejecutar el archivo?
+Es posible que al ejecutar el programa presentes problemas con las versiones del compilado del programa, para eso se recomienda que primero verifiques el entorno de ejecución. Asegúrate de que la versión correcta de Java esté siendo utilizada para ejecutar tu programa. Puede haber múltiples versiones de Java instaladas, y es posible que la ejecución esté utilizando una versión diferente a la que muestra java -version. EL programa esta compilado para Java 18 o superior.
 
-# ESTO ES PARA LOS QUE SIGUEN, TIENEN QUE EXPLICAR COMO HACER QUE EL ARCHIVO SEA EJECUTADO, DAR EL PASO A PASO DE COMO CADA CASO DE PRUEBA DEBE DE SER GUARDADO, EJECUTADO, ETC...
+#### Verifica la compilación
+Asegúrate de que la clase ´Calc´ (Calc es ell nombre del programa ejecutable) está compilada recientemente con la misma versión de Java
+```bash
+javac Calc.java
+```
+#### Eliminar clases antiguas
+Si hay archivos .class que fueron compilados con versiones anteriores de Java, esto podría causar conflictos. Puedes eliminar todos los archivos .class y recompilar:
+```bash
+rm *.class
+javac *.java
+```
+Ahora, intenta ejecutar el programa:
+```bash
+java Calc
+```
+
+Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuestra calculadora haciendo testeos de Suma, Resta, Multiplicación y División. Estos casos de prueba nos permitirán asegurarnos de que la calculadora funciona correctamente bajo diferentes condiciones y con una variedad de datos de entrada. Nos vamos a enfocar en algunos de los siguientes ejemplos.
 
 
 ### 1. Operaciones Básicas
@@ -77,6 +94,7 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
     División de enteros positivos: 15 / 3 = 5
     División que no da un número entero: 7 / 2 = 3.5
     División de un número negativo por un número positivo: -12 / 4 = -3
+    
 
 ### 2. Casos de Borde (Boundary Cases)
 
