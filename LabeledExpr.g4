@@ -9,19 +9,20 @@ stat:   expr NEWLINE                # printExpr
 
 expr:   expr op=('*'|'/') expr      # MulDiv
     |   expr op=('+'|'-') expr      # AddSub
+    |   '-' expr                    # Negate       // Añadido para manejar números negativos
     |   FLOAT                       # float
     |   INT                         # int
     |   ID                          # id
     |   '(' expr ')'                # parens
     ;
 
-MUL :   '*' ; 
+MUL :   '*' ;
 DIV :   '/' ;
 ADD :   '+' ;
 SUB :   '-' ;
-ID  :   [a-zA-Z]+ ;     
-INT :   '-'?[0-9]+ ;         // match integers, now with optional negative sign
-FLOAT : '-'?([0-9]+[.][0-9]* | [0-9]*[.][0-9]+) ;  // match floats, with optional negative sign
-NEWLINE:'\r'? '\n' ;     
-WS  :   [ \t]+ -> skip ; 
+ID  :   [a-zA-Z]+ ;
+INT :   [0-9]+ ;
+FLOAT : [0-9]+ '.' [0-9]* ;
+NEWLINE:'\r'? '\n' ;
+WS  :   [ \t]+ -> skip ;
 

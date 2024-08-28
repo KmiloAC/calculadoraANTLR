@@ -71,5 +71,10 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Double> {
     public Double visitParens(LabeledExprParser.ParensContext ctx) {
         return visit(ctx.expr()); 
     }
+    @Override
+    public Double visitNegate(LabeledExprParser.NegateContext ctx) {
+        return -visit(ctx.expr());  // Devuelve el valor negativo de la subexpresión
+    }
+    
 }
 
