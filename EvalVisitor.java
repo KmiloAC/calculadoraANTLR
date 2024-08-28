@@ -9,62 +9,67 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
-    /** "memory" for our calculator; variable/value pairs go here */
-    Map<String, Integer> memory = new HashMap<String, Integer>();
+public class EvalVisitor extends LabeledExprBaseVisitor<Double> {
+    Map<String, Double> memory = new HashMap<String, Double>();
 
-    /** ID '=' expr NEWLINE */
     @Override
-    public Integer visitAssign(LabeledExprParser.AssignContext ctx) {
-        String id = ctx.ID().getText();  // id is left-hand side of '='
-        int value = visit(ctx.expr());   // compute value of expression on right
-        memory.put(id, value);           // store it in our memory
+    public Double visitAssign(LabeledExprParser.AssignContext ctx) {
+        String id = ctx.ID().getText();  
+        double value = visit(ctx.expr());  
+        memory.put(id, value);           
         return value;
     }
 
-    /** expr NEWLINE */
     @Override
-    public Integer visitPrintExpr(LabeledExprParser.PrintExprContext ctx) {
-        Integer value = visit(ctx.expr()); // evaluate the expr child
-        System.out.println(value);         // print the result
-        return 0;                          // return dummy value
+    public Double visitPrintExpr(LabeledExprParser.PrintExprContext ctx) {
+        Double value = visit(ctx.expr());
+        System.out.println(value);         
+        return 0.0;                         
     }
 
-    /** INT */
     @Override
-    public Integer visitInt(LabeledExprParser.IntContext ctx) {
-        return Integer.valueOf(ctx.INT().getText());
+    public Double visitInt(LabeledExprParser.IntContext ctx) {
+        return Double.valueOf(ctx.INT().getText());
+    }
+    
+    @Override
+    public Double visitFloat(LabeledExprParser.FloatContext ctx) {
+        return Double.valueOf(ctx.FLOAT().getText());
     }
 
-    /** ID */
     @Override
-    public Integer visitId(LabeledExprParser.IdContext ctx) {
+    public Double visitId(LabeledExprParser.IdContext ctx) {
         String id = ctx.ID().getText();
         if ( memory.containsKey(id) ) return memory.get(id);
-        return 0;
+        return 0.0;
     }
-
-    /** expr op=('*'|'/') expr */
     @Override
-    public Integer visitMulDiv(LabeledExprParser.MulDivContext ctx) {
-        int left = visit(ctx.expr(0));  // get value of left subexpression
-        int right = visit(ctx.expr(1)); // get value of right subexpression
-        if ( ctx.op.getType() == LabeledExprParser.MUL ) return left * right;
-        return left / right; // must be DIV
+    public Double visitMulDiv(LabeledExprParser.MulDivContext ctx) {
+        double left = visit(ctx.expr(0));  // Obtener el valor de la subexpresión izquierda
+        double right = visit(ctx.expr(1)); // Obtener el valor de la subexpresión derecha
+
+        if (ctx.op.getType() == LabeledExprParser.MUL) {
+            return left * right;  // Multiplicación
+        } else {
+            if (right == 0) {
+                System.err.println("Error al dividir entre cero");
+                return null;  // O puedes devolver un valor especial, como Double.NaN, dependiendo de cómo quieras manejarlo
+            }
+            return left / right;  // División
+        }
     }
-
-    /** expr op=('+'|'-') expr */
+    
     @Override
-    public Integer visitAddSub(LabeledExprParser.AddSubContext ctx) {
-        int left = visit(ctx.expr(0));  // get value of left subexpression
-        int right = visit(ctx.expr(1)); // get value of right subexpression
+    public Double visitAddSub(LabeledExprParser.AddSubContext ctx) {
+        double left = visit(ctx.expr(0));  
+        double right = visit(ctx.expr(1)); 
         if ( ctx.op.getType() == LabeledExprParser.ADD ) return left + right;
-        return left - right; // must be SUB
+        return left - right; 
     }
 
-    /** '(' expr ')' */
     @Override
-    public Integer visitParens(LabeledExprParser.ParensContext ctx) {
-        return visit(ctx.expr()); // return child expr's value
+    public Double visitParens(LabeledExprParser.ParensContext ctx) {
+        return visit(ctx.expr()); 
     }
 }
+

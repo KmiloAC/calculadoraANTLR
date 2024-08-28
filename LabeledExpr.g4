@@ -1,4 +1,4 @@
-grammar LabeledExpr; // rename to distinguish from Expr.g4
+grammar LabeledExpr;
 
 prog:   stat+ ;
 
@@ -9,16 +9,19 @@ stat:   expr NEWLINE                # printExpr
 
 expr:   expr op=('*'|'/') expr      # MulDiv
     |   expr op=('+'|'-') expr      # AddSub
+    |   FLOAT                       # float
     |   INT                         # int
     |   ID                          # id
     |   '(' expr ')'                # parens
     ;
 
-MUL :   '*' ; // assigns token name to '*' used above in grammar
+MUL :   '*' ; 
 DIV :   '/' ;
 ADD :   '+' ;
 SUB :   '-' ;
-ID  :   [a-zA-Z]+ ;      // match identifiers
-INT :   [0-9]+ ;         // match integers
-NEWLINE:'\r'? '\n' ;     // return newlines to parser (is end-statement signal)
-WS  :   [ \t]+ -> skip ; // toss out whitespace
+ID  :   [a-zA-Z]+ ;     
+INT :   '-'?[0-9]+ ;         // match integers, now with optional negative sign
+FLOAT : '-'?([0-9]+[.][0-9]* | [0-9]*[.][0-9]+) ;  // match floats, with optional negative sign
+NEWLINE:'\r'? '\n' ;     
+WS  :   [ \t]+ -> skip ; 
+
