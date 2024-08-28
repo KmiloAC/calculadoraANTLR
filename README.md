@@ -117,14 +117,15 @@ y al dar `Ctrl+d`, obtendremos el resultado:
 -11.0
 ```
 
+
+### 2. Casos de Borde (Boundary Cases)
+
 Podremos realizar el mismo proceso como lo hicimos con el caso anterior con los siguientes para poder verificar con los diferentes casos de estudio que la calculadora funciona correctamente donde al iniciar siempre sera Java, sabiendo que estamos situados en la carpeta desde la terminal, ponemos como parametro el archivo .expr que contienen los diferentes casos de estudio
 
 Dado casos de borde:
 ```bash
 java Calc casos-de-estudio/casosdeborde.expr
 ```
-
-### 2. Casos de Borde (Boundary Cases)
 
     Suma de cero con otro número: 0 + 8 = 8
     Multiplicación por cero: 0 * 7 = 0
