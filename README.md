@@ -62,10 +62,10 @@ java -cp ~/apps/ANTLR/antlr-4.13.2-complete.jar org.antlr.v4.Tool
 # Implementación de la calculadora en ANTLR
 
 ### 0. Como ejecutar el archivo?
-Es posible que al ejecutar el programa presentes problemas con las versiones del compilado del programa, para eso se recomienda que primero verifiques el entorno de ejecución. Asegúrate de que la versión correcta de Java esté siendo utilizada para ejecutar tu programa. Puede haber múltiples versiones de Java instaladas, y es posible que la ejecución esté utilizando una versión diferente a la que muestra java -version. EL programa esta compilado para Java 18 o superior.
+Es posible que al ejecutar el programa presentes problemas con las versiones del compilado del programa, para eso se recomienda que primero verifiques el entorno de ejecución. Asegúrate de que la versión correcta de Java esté siendo utilizada para ejecutar tu programa. Puede haber múltiples versiones de Java instaladas, y es posible que la ejecución esté utilizando una versión diferente a la que muestra java -version. El programa esta compilado para Java 18 o superior.
 
 #### Verifica la compilación
-Asegúrate de que la clase `Calc` (Calc es ell nombre del programa ejecutable) está compilada recientemente con la misma versión de Java
+Asegúrate de que la clase `Calc` (Calc es el nombre del programa ejecutable) está compilada recientemente con la misma versión de Java
 ```bash
 javac Calc.java
 ```
@@ -99,7 +99,7 @@ Para probar el funcionamiento de las operaciones básicas podemos hacerlo de dos
 
 Podemos utilizar el archivo `operacionesbasicas.expr` alojado en la carpeta `casos-de-estudio` que nos permite cargar un conjunto de expresiones para que la calculadora resuelva simultáneamente:
 ```bash
-java Calc operacionesbasicas.expr
+java Calc casos-de-estudio/operacionesbasicas.expr
 ```
 O simplemente ejecutamos el archivo:
 ```bash
@@ -116,6 +116,8 @@ y al dar `Ctrl+d`, obtendremos el resultado:
 12.0
 -11.0
 ```
+
+Podremos realizar el mismo proceso como lo hicimos con el caso anterior con los siguientes para poder verificar con los diferentes casos de estudio que la calculadora funciona correctamente
 
 ### 2. Casos de Borde (Boundary Cases)
 
