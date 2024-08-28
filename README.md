@@ -92,20 +92,14 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
     Multiplicación de números decimales: 2.3 * 1.5 = 3.45
     División de números decimales: 7.5 / 2.5 = 3.0
     Operación mixta con varios operadores: 5 + 3 * 2 - 12 = -1 (comprueba el orden de operaciones)
-    Operaciones con paréntesis: (5 + (3 / 3)) * 2 = 10 (comprueba el uso de paréntesis)
+    Operaciones con paréntesis: (5 + (3 / 3)) * 2 = 12 (comprueba el uso de paréntesis)
     
 ### 4. Casos de Errores
 
     División por cero: Verifica que la calculadora maneje este caso correctamente.
     Entrada no numérica: Intenta realizar operaciones con entradas no numéricas, como letras o símbolos, y verifica que       la calculadora las rechace correctamente.
 
-
-### 5. Verificación de Estado
-
-    Encadenamiento de operaciones: 5 + 3 = 8, luego * 2 = 16 (verifica que el resultado anterior se utilice correctamente)
-    Reinicio del cálculo: Después de una operación, asegúrate de que un nuevo cálculo comience correctamente.
-
-### 6. Operaciones Combinadas
+### 5. Operaciones Combinadas
 
     Operación mixta con varios operadores: 5 + 3 * 2 = 11 (comprueba el orden de operaciones)
     Operaciones con paréntesis: (5 + 3) * 2 = 16 (comprueba el uso de paréntesis)
