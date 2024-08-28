@@ -95,6 +95,27 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
     División que no da un número entero: 7 / 2 = 3.5
     División de un número negativo por un número positivo: -12 / 4 = -3
     
+Para probar el funcionamiento de las operaciones básicas podemos hacerlo de dos formas:
+
+Podemos utilizar el archivo `operacionesbasicas.expr` alojado en la carpeta ``que nos permite cargar un conjunto de expresiones para que la calculadora resuelva simultáneamente:
+```bash
+java Calc operacionesbasicas.expr
+```
+O simplemente ejecutamos el archivo:
+```bash
+java Calc
+```
+escribimos la expresión o secuencia de expresiones, dando un salto de línea con enter y al finalizar la escritura de expresiones dar enter:
+```bash
+5 + 7
+-3 + (-8)
+
+```
+y al dar `Ctrl+d`, obtendremos el resultado:
+```bash
+12.0
+-11.0
+```
 
 ### 2. Casos de Borde (Boundary Cases)
 
