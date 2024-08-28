@@ -65,7 +65,7 @@ java -cp ~/apps/ANTLR/antlr-4.13.2-complete.jar org.antlr.v4.Tool
 Es posible que al ejecutar el programa presentes problemas con las versiones del compilado del programa, para eso se recomienda que primero verifiques el entorno de ejecución. Asegúrate de que la versión correcta de Java esté siendo utilizada para ejecutar tu programa. Puede haber múltiples versiones de Java instaladas, y es posible que la ejecución esté utilizando una versión diferente a la que muestra java -version. EL programa esta compilado para Java 18 o superior.
 
 #### Verifica la compilación
-Asegúrate de que la clase ´Calc´ (Calc es ell nombre del programa ejecutable) está compilada recientemente con la misma versión de Java
+Asegúrate de que la clase `Calc` (Calc es ell nombre del programa ejecutable) está compilada recientemente con la misma versión de Java
 ```bash
 javac Calc.java
 ```
@@ -97,7 +97,7 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
     
 Para probar el funcionamiento de las operaciones básicas podemos hacerlo de dos formas:
 
-Podemos utilizar el archivo `operacionesbasicas.expr` alojado en la carpeta ``que nos permite cargar un conjunto de expresiones para que la calculadora resuelva simultáneamente:
+Podemos utilizar el archivo `operacionesbasicas.expr` alojado en la carpeta `casos-de-estudio` que nos permite cargar un conjunto de expresiones para que la calculadora resuelva simultáneamente:
 ```bash
 java Calc operacionesbasicas.expr
 ```
