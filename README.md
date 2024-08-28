@@ -69,9 +69,14 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
 ### 1. Operaciones Básicas
 
     Suma de enteros positivos: 5 + 7 = 12
+    Suma de enteros negativos: -3 + (-8) = -11
     Resta de enteros positivos: 10 - 4 = 6
+    Resta de enteros negativos: -6 - (-2) = -4
     Multiplicación de enteros positivos: 9 * 3 = 27
+    Multiplicación de un número positivo y un número negativo: -4 * 5 = -20
     División de enteros positivos: 15 / 3 = 5
+    División que no da un número entero: 7 / 2 = 3.5
+    División de un número negativo por un número positivo: -12 / 4 = -3
 
 ### 2. Casos de Borde (Boundary Cases)
 
@@ -82,10 +87,13 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
 
 ### 3. Operaciones Combinadas
 
+    Suma de números decimales: 2.5 + 3.7 = 6.2
+    Resta de números decimales: 5.6 - 2.1 = 3.5
+    Multiplicación de números decimales: 2.3 * 1.5 = 3.45
+    División de números decimales: 7.5 / 2.5 = 3.0
     Operación mixta con varios operadores: 5 + 3 * 2 - 12 = -1 (comprueba el orden de operaciones)
-    Operaciones con paréntesis: (5 + (3 / 3)) * 2 = 12 (comprueba el uso de paréntesis)
+    Operaciones con paréntesis: (5 + (3 / 3)) * 2 = 10 (comprueba el uso de paréntesis)
     
-
 ### 4. Casos de Errores
 
     División por cero: Verifica que la calculadora maneje este caso correctamente.
@@ -96,3 +104,8 @@ Vamos a crear distintos casos de prueba para comprobar la funcionalidad de nuest
 
     Encadenamiento de operaciones: 5 + 3 = 8, luego * 2 = 16 (verifica que el resultado anterior se utilice correctamente)
     Reinicio del cálculo: Después de una operación, asegúrate de que un nuevo cálculo comience correctamente.
+
+### 6. Operaciones Combinadas
+
+    Operación mixta con varios operadores: 5 + 3 * 2 = 11 (comprueba el orden de operaciones)
+    Operaciones con paréntesis: (5 + 3) * 2 = 16 (comprueba el uso de paréntesis)
